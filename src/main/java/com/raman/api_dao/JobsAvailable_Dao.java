@@ -16,7 +16,9 @@ import java.util.List;
 import com.raman.model.JobsEntity;
 
 public class JobsAvailable_Dao {
-	
+	public static List<JobsEntity> list = new ArrayList<JobsEntity>();//global list to store jobs
+	public static List<JobsEntity> sr = new ArrayList<JobsEntity>(); //global list to store search result based on filter
+
 	public JobsEntity getJobDetails_one(){
 		JobsEntity jobOne = new JobsEntity();
 		jobOne.setCompany("TPS");
@@ -50,12 +52,33 @@ public class JobsAvailable_Dao {
 
 	}
 
-	public List<JobsEntity> getJobsDetail(){
-		List<JobsEntity> jobList = new ArrayList<JobsEntity>(); 		
-		jobList.add(getJobDetails_one());
-		jobList.add(getJobDetails_two());
+	public List<JobsEntity> getJobsDetail(){	
+		list.clear();
+		list.add(getJobDetails_one());
+		list.add(getJobDetails_two());
+		return list;
+	}
 
-		return jobList;
+	public List<JobsEntity> getFilteredData(String filter) {	
+		sr.clear();
+		for(JobsEntity a: list){
+			System.out.println("printing object:\n"+a.toString());
+
+			if(a.getCompany().equalsIgnoreCase(filter) || a.getDesignation().equalsIgnoreCase(filter) ||
+					a.getEducation().equalsIgnoreCase(filter) || a.getIndustry().equalsIgnoreCase(filter) ||
+					a.getExperience().equalsIgnoreCase(filter) || a.getJobType().equalsIgnoreCase(filter)||
+					a.getLocation().equalsIgnoreCase(filter)|| a.getLocation().contains(filter)||
+					a.getSalary().equalsIgnoreCase(filter)|| a.getSkills().equalsIgnoreCase(filter))
+			{
+				sr.add(a);
+			}
+		}
+		System.out.println("number of search result: "+sr.size());
+		return sr;
+	}
+
+	public void addJobs(JobsEntity a) {
+		list.add(a);		
 	}
 
 }
