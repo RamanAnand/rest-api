@@ -28,7 +28,7 @@ post body: can be JSON or XML
 
 --------------OR---------------
 
-<jobsEntity>
+"<jobsEntity>
 <company>TPS</company>
 <designation>ASE</designation>
 <education>BE, Bsc, Msc, B Tech, BCA</education>
@@ -40,3 +40,4 @@ post body: can be JSON or XML
 <salary>13 lakhs</salary>
 <skills/>
 </jobsEntity>
+"
