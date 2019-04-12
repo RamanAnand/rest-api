@@ -26,18 +26,3 @@ post body: can be JSON or XML
 "skills": "computer, science, degree"
 }
 
---------------OR---------------
-
-"<jobsEntity>
-<company>TPS</company>
-<designation>ASE</designation>
-<education>BE, Bsc, Msc, B Tech, BCA</education>
-<experience>Fresher or <1 years</experience>
-<industry>IT</industry>
-<jobId>1</jobId>
-<jobType>full time, blockchain developer</jobType>
-<location>bangalore, chennai, kolkata</location>
-<salary>13 lakhs</salary>
-<skills/>
-</jobsEntity>
-"
