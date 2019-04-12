@@ -3,11 +3,11 @@ package com.raman.rest_api;
 /*
  * this class will have rest APIs implementations
  * GET:
- * http://www.localhost:8083/jersey_static_data/webapi/jobs/tcs
- * http://www.localhost:8083/jersey_static_data/webapi/jobs/infosys
- * http://www.localhost:8083/jersey_static_data/webapi/jobs/alljobs
+ * http://localhost:8082/rest-api/webapi/jobs/alljobs
+ * http://localhost:8082/rest-api/webapi/jobs/filter/{searchkeyword}
  * 
  * POST:
+ * http://localhost:8082/rest-api/webapi/jobs/addjob
  * 
  *  Author: RAMAN ANAND
  */
