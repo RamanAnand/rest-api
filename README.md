@@ -6,23 +6,16 @@ GET:
 
 http://localhost:8082/rest-api/webapi/jobs/alljobs
 
-http://localhost:8082/rest-api/webapi/jobs/filter/{searchkeyword}
+http://localhost:8082/rest-api/webapi/jobs/alljobs/{searchkeyword}
 
 POST:
-http://localhost:8082/rest-api/webapi/jobs/addjob -- add new job object verify by calling filter api for common attribute 
 
-post body: can be JSON or XML
+http://localhost:8082/rest-api/webapi/jobs/alljobs
 
-{
-"company": "v-bank",
-"designation": "network engineer",
-"education": "computer science engineering or equivalent",
-"experience": ">5 years",
-"industry": "IT",
-"jobId": 4,
-"jobType": "full time",
-"location": "bangalore",
-"salary": "23 lakhs - 30 lakhs",
-"skills": "computer, science, degree"
-}
+PUT: update
 
+http://localhost:8082/rest-api/webapi/jobs/alljobs
+
+DELETE:
+
+http://localhost:8082/rest-api/webapi/jobs/alljobs/{Jobid}

@@ -129,7 +129,7 @@ public class JobsEntity {
 
 	@Override
 	public String toString() {
-		return "JobsAvailable [skills=" + skills + ", designation="
+		return "Jobs [skills=" + skills + ", designation="
 				+ designation + ", companies=" + company + ", location="
 				+ location + ", expirience=" + experience + ", salary="
 				+ salary + ", industries=" + industry + ", education="

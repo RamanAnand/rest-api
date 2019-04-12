@@ -62,7 +62,6 @@ public class JobsAvailable_Dao {
 	public List<JobsEntity> getFilteredData(String filter) {	
 		sr.clear();
 		for(JobsEntity a: list){
-			System.out.println("printing object:\n"+a.toString());
 
 			if(a.getCompany().equalsIgnoreCase(filter) || a.getDesignation().equalsIgnoreCase(filter) ||
 					a.getEducation().equalsIgnoreCase(filter) || a.getIndustry().equalsIgnoreCase(filter) ||
@@ -77,8 +76,44 @@ public class JobsAvailable_Dao {
 		return sr;
 	}
 
-	public void addJobs(JobsEntity a) {
+	public JobsEntity createJob(JobsEntity a) {
 		list.add(a);		
+		return a;
+	}
+
+	public void updateJob(JobsEntity a) {
+		int jobID = a.getJobId();
+		for(JobsEntity e:list){
+			if(e.getJobId()==jobID){
+				e.setCompany(a.getCompany());
+				e.setDesignation(a.getDesignation());
+				e.setEducation(a.getEducation());
+				e.setExperience(a.getExperience());
+				e.setIndustry(a.getIndustry());
+				e.setJobId(jobID);
+				e.setJobType(a.getJobType());
+				e.setLocation(a.getLocation());
+				e.setSalary(a.getSalary());
+				e.setSkills(a.getSkills());
+				System.out.println("updated");
+				list.remove(e);
+				list.add(e);
+
+				return;
+			}
+		}
+		createJob(a);
+		System.out.println("created as new job");		
+	}
+
+	public JobsEntity deleteJob(int id) {
+		for(JobsEntity e:list){
+			if(e.getJobId()==id){
+				list.remove(e);
+				return e;
+			}
+		}
+		return null;
 	}
 
 }
